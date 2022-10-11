@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Game</title>
+        <style>
+            .game_input {
+                display: none
+            }
+        </style>
+    </head>
+    <body>
+
+    <h1>Let's play!</h1>
+
+    <form action="/madlibs">
+    Person: <input type="text" name="person" id="person-input">
+    <label for="person-input" class="game_input">Tell us a person</label>
+    Choose a color:
+    <select name="color">
+        <option value="cyan">Cyan</option>
+        <option value="violet">Violet</option>
+        <option value="pumpernickel">Pumpernickel</option>
+    </select>
+    
+    Noun: <input type="text" name="noun" id="noun-input">
+    <label for="noun-input" class="game_input">Tell us a noun</label>
+    
+    Adjective: <input type="text" name="adjective" id="adjective-input">
+    <label for="adjective-input" class="game_input">Tell us an adjective</label>
+
+    <input type="submit">
+    </form>
+
+    </body>
+</html>
