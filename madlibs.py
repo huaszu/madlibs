@@ -25,6 +25,20 @@ AWESOMENESS = [
     "lovely",
 ]
 
+ADJECTIVES = [
+    "mischievous", 
+    "adorable",
+    "adventurous",
+    "charming",
+    "supercalifragilisticexpialidocious",
+    "combative",
+    "delightful",
+    "enchanting",
+    "fierce",
+    "frantic",
+    "grotesque",
+    "jittery"
+]
 
 @app.route("/")
 def start_here():
@@ -54,13 +68,12 @@ def greet_person():
 @app.route("/game")
 def show_madlib_form():
     
-    
     user_play = request.args.get("want-play")
 
     if user_play == "no":
         return render_template("goodbye.html")
 
-    return render_template("game.html")
+    return render_template("game.html", adjectives=ADJECTIVES)
 
 
 @app.route("/madlibs")
@@ -68,13 +81,12 @@ def create_madlib():
     color = request.args.get("color")
     noun = request.args.get("noun")
     person = request.args.get("person")
-    adjective = request.args.get("adjective")
-
+    adjectives = request.args.getlist("adjective") 
     return render_template("madlib.html",
                            color=color,
                            noun=noun,
                            person=person,
-                           adjective=adjective)
+                           adjectives=adjectives)
 
 if __name__ == "__main__":
     # Setting debug=True gives us error messages in the browser and also

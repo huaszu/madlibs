@@ -13,22 +13,37 @@
     <h1>Let's play!</h1>
 
     <form action="/madlibs">
-    Person: <input type="text" name="person" id="person-input">
-    <label for="person-input" class="game_input">Tell us a person</label>
-    Choose a color:
-    <select name="color">
-        <option value="cyan">Cyan</option>
-        <option value="violet">Violet</option>
-        <option value="pumpernickel">Pumpernickel</option>
-    </select>
+        Person: <input type="text" name="person" id="person-input">
+        <label for="person-input" class="game_input">Tell us a person</label>
+        Choose a color:
+        <select name="color">
+            <option value="cyan">Cyan</option>
+            <option value="violet">Violet</option>
+            <option value="pumpernickel">Pumpernickel</option>
+        </select>
+        
+        Noun: <input type="text" name="noun" id="noun-input">
+        <label for="noun-input" class="game_input">Tell us a noun</label>
     
-    Noun: <input type="text" name="noun" id="noun-input">
-    <label for="noun-input" class="game_input">Tell us a noun</label>
-    
-    Adjective: <input type="text" name="adjective" id="adjective-input">
-    <label for="adjective-input" class="game_input">Tell us an adjective</label>
-
-    <input type="submit">
+    <!-- Adjective: <input type="text" name="adjective" id="adjective-input">
+    <label for="adjective-input" class="game_input">Tell us an adjective</label> -->
+    <!-- <input type="checkbox" id ="mischievous" name="adjective" value="mischievous">
+    <label for="mischievous" class="game_input">Adjective1</label>
+    <input type="checkbox" id ="adjective1" name="adjective" value="Adjective">
+    <label for="adjective1" class="game_input">Adjective1</label>
+    <input type="checkbox" id ="adjective1" name="adjective" value="Adjective">
+    <label for="adjective1" class="game_input">Adjective1</label>
+    <input type="checkbox" id ="adjective1" name="adjective" value="Adjective">
+    <label for="adjective1" class="game_input">Adjective1</label>
+    <input type="checkbox" id ="adjective1" name="adjective" value="Adjective">
+    <label for="adjective1" class="game_input">Adjective1</label>
+    <input type="checkbox" id ="adjective1" name="adjective" value="Adjective">
+    <label for="adjective1" class="game_input">Adjective1</label> -->
+        {% for adjective in adjectives %}
+            <input type="checkbox" id={{ adjective }} value={{ adjective }} name="adjective">
+            <label for={{ adjective }}>{{ adjective }}</label>
+        {% endfor %}
+        <input type="submit">
     </form>
 
     </body>
