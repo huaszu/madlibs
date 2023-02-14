@@ -5,6 +5,7 @@ Game that prompts player for words to substitute into blanks in a story.
 
 - Python
 - HTML
+- CSS
 - Flask 
 
 ## License
